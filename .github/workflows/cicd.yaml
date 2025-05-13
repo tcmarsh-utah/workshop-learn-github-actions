@@ -14,14 +14,14 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-          
+
+      - name: Build
+        uses: ./.github/actions/build
+
       - name: CLOC
         uses: ./.github/actions/cloc
         with:
           path: public
-
-      - name: Build
-        uses: ./.github/actions/build
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
