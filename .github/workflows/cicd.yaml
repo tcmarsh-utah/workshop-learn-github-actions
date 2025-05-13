@@ -15,6 +15,11 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: CLOC
+        uses: ./.github/actions/cloc
+        with:
+          path: public
+          
       - name: Build
         uses: ./.github/actions/build
 
